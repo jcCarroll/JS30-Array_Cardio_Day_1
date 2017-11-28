@@ -147,8 +147,9 @@
         // first I had to open dev tools and find what contained the list
         const category = document.querySelector('.mw-category');
         const links = [...category.querySelectorAll('a')]; // brings back only links using spread "..." to take everything out of the iterable and put it in the arry. You could also use Array.from(category.querySelectorAll('a')) to put it in an array.
-
-        const de = links.map(link => link.textContent);
+        const de = links
+            .map(link => link.textContent) // grabs the text of the link
+            .filter(streetName => streetName.includes('de')); // returns only if de is in name
 
 
         // 7. sort Exercise
